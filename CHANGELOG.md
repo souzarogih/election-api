@@ -3,4 +3,8 @@ All notable changes to this project will be documented in this file. This change
 
 ## [0.0.1] 2024-04-03
 ### Added
-- #0001 | Setup do projeto
+- 0001 | Setup do projeto
+
+## [0.0.2] 2024-04-03
+### Added
+- #0001 - Criar recurso de candidatos
