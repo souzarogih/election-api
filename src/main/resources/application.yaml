@@ -1,0 +1,19 @@
+server:
+    port: 8081
+
+spring:
+    application:
+        name: election-api
+    datasource:
+        url: jdbc:postgresql://localhost:5432/election-api-db
+        username: postgres
+        password: rogih21
+    jpa:
+        hibernate:
+            ddl-auto: update
+            dialect:  org.hibernate.dialect.PostgreSQLDialect
+            jdbc:
+                lob.non-contextual-creation: true
+        properties:
+            hibernate:
+                show_sql: true
