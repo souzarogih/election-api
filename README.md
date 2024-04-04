@@ -26,8 +26,8 @@
 
 ### Mapa de Endpoints da API
 
-- [ ] CRUD /candidatos
-- [ ] CRUD /eleitores
+- [ ! ] CRUD /candidatos
+- [ ! ] CRUD /eleitores
 - [ ] CRUD /cargos
 - [ ] POST /abrir-sessao
 - [ ] PATCH /fechar-sessao
