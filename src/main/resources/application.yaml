@@ -17,3 +17,10 @@ spring:
         properties:
             hibernate:
                 show_sql: true
+
+logging:
+  level:
+    com.lifters.higorsouza: TRACE
+    root: INFO
+    org.springframework.web: DEBUG
+    org.hibernate: INFO
