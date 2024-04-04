@@ -25,6 +25,8 @@ public class Candidate implements Serializable {
     private UUID id;
 
     private String name;
+    //fullname
+    //partido enum
     private String cpf;
     private String email;
 
