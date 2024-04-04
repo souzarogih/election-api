@@ -8,3 +8,7 @@ All notable changes to this project will be documented in this file. This change
 ## [0.0.2] 2024-04-03
 ### Added
 - #0001 - Criar recurso de candidatos
+
+## [0.0.3] 2024-04-03
+### Added
+- #005 - Definir controller/endpoint para cadastrar candidatos
