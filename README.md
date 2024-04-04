@@ -17,7 +17,11 @@
 
 #### Diagrama simplificado do serviço
 
-<img src="./images/diagrama-project.png" alt="payment-api-service" width="100%">
+<img src="./images/diagrama-project.png" alt="payment-api-service" width="80%">
+
+#### Diagrama de classe do serviços
+
+<img src="./images/diagrama-classe.png" alt="payment-api-service" width="80%">
 
 ### Acesso ao Swagger
 - [Swagger Doc](https://www.youtube.com/)
