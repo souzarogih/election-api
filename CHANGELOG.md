@@ -20,3 +20,7 @@ All notable changes to this project will be documented in this file. This change
 ## [0.0.5] 2024-04-04
 ### Added
 - #002 - Definir controller/endpoint para recurso de eleitores
+
+## [0.0.6] 2024-04-04
+### Added
+- #003 - Definir controller/endpoint para recurso de cargos

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.lifters.higorsouza</groupId>
     <artifactId>election-api</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
     <name>election-api</name>
     <description>election-api</description>
     <properties>
