@@ -10,7 +10,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
@@ -33,6 +32,8 @@ public class VoterServiceImpl implements VoterService {
                 candidateRequest.getCpf(),
                 candidateRequest.getEmail(),
                 VoterNumberGenerator.generateVoterNumber(),
+                null,
+                null,
                 LocalDateTime.now(ZoneId.of("UTC")),
                 null
         ));

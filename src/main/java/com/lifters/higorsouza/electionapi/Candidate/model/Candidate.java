@@ -1,10 +1,10 @@
 package com.lifters.higorsouza.electionapi.Candidate.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.lifters.higorsouza.electionapi.Position.model.Position;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,6 +16,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Candidate implements Serializable {
 
@@ -25,10 +26,12 @@ public class Candidate implements Serializable {
     private UUID id;
 
     private String name;
-    //fullname
-    //partido enum
     private String cpf;
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "position_id")
+    private Position positionId;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private LocalDateTime creationDate;
