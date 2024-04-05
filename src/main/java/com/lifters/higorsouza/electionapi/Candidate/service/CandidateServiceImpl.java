@@ -30,6 +30,7 @@ public class CandidateServiceImpl implements CandidateService{
                 candidateRequest.getName(),
                 candidateRequest.getCpf(),
                 candidateRequest.getEmail(),
+                null,
                 LocalDateTime.now(ZoneId.of("UTC")),
                 null
         ));

@@ -1,9 +1,9 @@
 package com.lifters.higorsouza.electionapi.Voter.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.lifters.higorsouza.electionapi.Candidate.model.Candidate;
+import com.lifters.higorsouza.electionapi.Session.model.Session;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,6 +28,14 @@ public class Voter implements Serializable {
     private String cpf;
     private String email;
     private String voterNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "candidate_id")
+    private Candidate candidate;
+
+    @ManyToOne
+    @JoinColumn(name = "session_id")
+    private Session session;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private LocalDateTime creationDate;

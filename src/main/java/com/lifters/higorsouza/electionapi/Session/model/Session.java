@@ -1,8 +1,11 @@
-package com.lifters.higorsouza.electionapi.Position.model;
+package com.lifters.higorsouza.electionapi.Session.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.lifters.higorsouza.electionapi.Candidate.model.Candidate;
-import jakarta.persistence.*;
+import com.lifters.higorsouza.electionapi.Voter.model.Voter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,29 +13,29 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Position implements Serializable {
+public class Session implements Serializable {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    private String position;
-    private String electionYear;
+    private String sessionCode;
+    private boolean open;
 
-    @OneToOne
-    @JoinColumn(name = "elected_candidate_id")
-    private Candidate electedCandidate;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDateTime creationDate;
+    @OneToMany(mappedBy = "session")
+    private List<Voter> voters;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDateTime lastUpdateDate;
+    private LocalDateTime openSessionDateTime;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime closeSessionDateTime;
 }

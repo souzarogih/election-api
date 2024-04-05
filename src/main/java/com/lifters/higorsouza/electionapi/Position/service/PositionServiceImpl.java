@@ -29,6 +29,7 @@ public class PositionServiceImpl implements PositionService {
                 UUID.randomUUID(),
                 positionRequest.getPosition(),
                 positionRequest.getElectionYear(),
+                null,
                 LocalDateTime.now(ZoneId.of("UTC")),
                 null
         ));
@@ -84,9 +85,6 @@ public class PositionServiceImpl implements PositionService {
         Optional<Position> positionDataDb = positionRepository.findById(id);
         if(positionDataDb.isPresent()) {
             Position positionModel = positionDataDb.get();
-//            if (positionRequest.getPosition() != null) {
-//                candidateModel.get(positionRequest.getCpf());
-//            }
 
             BeanUtils.copyProperties(positionRequest, positionModel, "id");
             positionModel.setLastUpdateDate(LocalDateTime.now(ZoneId.of("UTC")));
